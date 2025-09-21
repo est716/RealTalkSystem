@@ -1,0 +1,17 @@
+
+User: 
+    userId: String
+
+Room:
+    roomId: String
+
+
+talkSpace:
+    talkList: List<String>
+
+MessageBody: //作為傳遞資料的格式
+    roomId: String
+    talkSpace: talkSpace
+        
+
+
