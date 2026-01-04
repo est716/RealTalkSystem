@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import lombok.Getter;
@@ -9,9 +10,10 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ChartService {
-    private Room room;
+    @Autowired
+    private Room room; // can use dependency injection by autowired
 
     public ChartService(){
-        this.room = new Room();
+        // this.room = new Room();
     }
 }

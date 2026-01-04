@@ -14,7 +14,7 @@
 
     <!-- Input Area -->
     <div class="chat-input">
-      <input v-model="messageModel" type="text" placeholder="輸入訊息..." />
+      <input v-model="messageModel" type="text" placeholder="輸入訊息..." @keyup.enter="sendMessage(roomId, userId)"/>
       <button @click="sendMessage(roomId, userId)">送出</button>
     </div>
   </div>

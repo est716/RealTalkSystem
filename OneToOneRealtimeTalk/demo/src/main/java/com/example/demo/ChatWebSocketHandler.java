@@ -12,7 +12,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class ChatWebSocketHandler extends TextWebSocketHandler {
 
     private final CopyOnWriteArrayList<WebSocketSession> sessions;
+   
     private final ChartService chartService;
+    
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     public ChatWebSocketHandler(ChartService chartService) {

@@ -1,22 +1,26 @@
 package com.example.demo;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import lombok.Getter;
 
 @Getter
+@Component
 public class Room {
     private String roomId;
     private List<User> users;
-    private ChartRecordOfRoom record;
+    @Autowired
+    private ChartRecordOfRoom record; // can use dependency injection by autowired
 
     public Room() {
         this.roomId = UUID.randomUUID().toString();
         this.users = new LinkedList<User>();
-        this.record = new ChartRecordOfRoom(new ArrayList<UserIDAndContextPair<String, String>>());
+        // this.record = new ChartRecordOfRoom(new ArrayList<UserIDAndContextPair<String, String>>());
     }
 
     public void addMessage(MessageBody message){

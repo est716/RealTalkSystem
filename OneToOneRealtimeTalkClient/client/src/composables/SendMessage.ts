@@ -8,7 +8,7 @@ export function useSendMessage(socket: Ref<any, any>, messageList: Ref<any[], an
         set: (value) => myMessage.value = value
     });
 
-    function sendMessage(roomId, userId) {
+    function sendMessage(roomId: any, userId: any) {
         if (myMessage.value.trim() === '') {
             return;
         }

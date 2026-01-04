@@ -2,11 +2,14 @@ package com.example.demo;
 
 import java.util.Objects;
 
+import org.springframework.stereotype.Component;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Component
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
