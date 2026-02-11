@@ -7,13 +7,15 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 
 import lombok.AllArgsConstructor;
 
+
 @Configuration
 @EnableWebSocket
 @AllArgsConstructor
 public class WebSocketConfig implements WebSocketConfigurer{
     private final ChartService chartService;
     @Override
-    public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
+    public void registerWebSocketHandlers(@SuppressWarnings("null") WebSocketHandlerRegistry registry) {
+        java.util.Objects.requireNonNull(registry, "WebSocketHandlerRegistry must not be null");
         registry.addHandler(new ChatWebSocketHandler(chartService), "/socket").setAllowedOrigins("*");
     }
     
