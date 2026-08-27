@@ -1,6 +1,6 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.0 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.3.0">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
   <diagram name="第 1 页" id="cBGuSfbbsyIciyb52ws-">
-    <mxGraphModel dx="735" dy="1671" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="639" dy="1606" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -58,50 +58,6 @@
           <mxGeometry relative="1" x="-0.0532" y="-4" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
-        </mxCell>
-        <mxCell id="AVoCGskfhzGQ_-RCT_kL-1" parent="1" style="swimlane;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=20;html=1;direction=east;" value="聊天室系統" vertex="1">
-          <mxGeometry height="1220" width="1040" x="730" y="-1160" as="geometry" />
-        </mxCell>
-        <mxCell id="AVoCGskfhzGQ_-RCT_kL-2" parent="AVoCGskfhzGQ_-RCT_kL-1" style="swimlane;startSize=20;html=1;" value="註冊" vertex="1">
-          <mxGeometry height="1200" width="300" y="20" as="geometry" />
-        </mxCell>
-        <mxCell id="AVoCGskfhzGQ_-RCT_kL-18" edge="1" parent="AVoCGskfhzGQ_-RCT_kL-2" source="AVoCGskfhzGQ_-RCT_kL-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="AVoCGskfhzGQ_-RCT_kL-13" value="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="AVoCGskfhzGQ_-RCT_kL-12" parent="AVoCGskfhzGQ_-RCT_kL-2" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" value="start" vertex="1">
-          <mxGeometry height="30" width="100" x="30" y="30" as="geometry" />
-        </mxCell>
-        <mxCell id="AVoCGskfhzGQ_-RCT_kL-15" edge="1" parent="AVoCGskfhzGQ_-RCT_kL-2" source="AVoCGskfhzGQ_-RCT_kL-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="AVoCGskfhzGQ_-RCT_kL-14" value="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="AVoCGskfhzGQ_-RCT_kL-19" connectable="0" parent="AVoCGskfhzGQ_-RCT_kL-15" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="是" vertex="1">
-          <mxGeometry relative="1" x="-0.292" y="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="AVoCGskfhzGQ_-RCT_kL-17" edge="1" parent="AVoCGskfhzGQ_-RCT_kL-2" source="AVoCGskfhzGQ_-RCT_kL-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="AVoCGskfhzGQ_-RCT_kL-16" value="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="AVoCGskfhzGQ_-RCT_kL-13" parent="AVoCGskfhzGQ_-RCT_kL-2" style="rhombus;whiteSpace=wrap;html=1;" value="已註冊?" vertex="1">
-          <mxGeometry height="50" width="80" x="40" y="100" as="geometry" />
-        </mxCell>
-        <mxCell id="AVoCGskfhzGQ_-RCT_kL-14" parent="AVoCGskfhzGQ_-RCT_kL-2" style="whiteSpace=wrap;html=1;" value="登入頁面" vertex="1">
-          <mxGeometry height="45" width="80" x="180" y="102.5" as="geometry" />
-        </mxCell>
-        <mxCell id="AVoCGskfhzGQ_-RCT_kL-16" parent="AVoCGskfhzGQ_-RCT_kL-2" style="whiteSpace=wrap;html=1;" value="註冊頁面" vertex="1">
-          <mxGeometry height="45" width="80" x="40" y="190" as="geometry" />
-        </mxCell>
-        <mxCell id="AVoCGskfhzGQ_-RCT_kL-3" parent="AVoCGskfhzGQ_-RCT_kL-1" style="swimlane;startSize=20;html=1;" value="建立聊天室" vertex="1">
-          <mxGeometry height="1200" width="180" x="300" y="20" as="geometry" />
-        </mxCell>
-        <mxCell id="AVoCGskfhzGQ_-RCT_kL-4" parent="AVoCGskfhzGQ_-RCT_kL-1" style="swimlane;startSize=20;html=1;" value="退出聊天室" vertex="1">
-          <mxGeometry height="1200" width="170" x="480" y="20" as="geometry" />
-        </mxCell>
-        <mxCell id="AVoCGskfhzGQ_-RCT_kL-5" parent="AVoCGskfhzGQ_-RCT_kL-1" style="swimlane;startSize=20;html=1;" value="建立類別標籤" vertex="1">
-          <mxGeometry height="1200" width="190" x="650" y="20" as="geometry" />
-        </mxCell>
-        <mxCell id="AVoCGskfhzGQ_-RCT_kL-6" parent="AVoCGskfhzGQ_-RCT_kL-1" style="swimlane;startSize=20;" value="審核類別標籤(官方)" vertex="1">
-          <mxGeometry height="1200" width="200" x="840" y="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

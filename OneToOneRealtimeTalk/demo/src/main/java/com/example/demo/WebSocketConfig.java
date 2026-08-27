@@ -1,22 +1,21 @@
 package com.example.demo;
 
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.socket.config.annotation.EnableWebSocket;
-import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
-import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
+import org.springframework.messaging.simp.config.MessageBrokerRegistry;
+import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
+import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
 
-import lombok.AllArgsConstructor;
+public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
-
-@Configuration
-@EnableWebSocket
-@AllArgsConstructor
-public class WebSocketConfig implements WebSocketConfigurer{
-    private final ChartService chartService;
     @Override
-    public void registerWebSocketHandlers(@SuppressWarnings("null") WebSocketHandlerRegistry registry) {
-        java.util.Objects.requireNonNull(registry, "WebSocketHandlerRegistry must not be null");
-        registry.addHandler(new ChatWebSocketHandler(chartService), "/socket").setAllowedOrigins("*");
+    public void configureMessageBroker(MessageBrokerRegistry config) {
+        config.enableSimpleBroker("/topic");
+        config.setApplicationDestinationPrefixes("/app");
     }
     
+    @Override
+    public void registerStompEndpoints(StompEndpointRegistry registry) {
+        registry.addEndpoint("/chatroom")
+                .setAllowedOriginPatterns("*");
+                //.withSockJS();
+    }
 }
