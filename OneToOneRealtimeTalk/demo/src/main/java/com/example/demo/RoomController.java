@@ -8,6 +8,14 @@ import lombok.NoArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+
+
 
 @RestController
 @AllArgsConstructor
@@ -17,8 +25,20 @@ public class RoomController {
     private ChatRoomService chatRoomService;
 
     @PostMapping("/createRoom")
-    public ChatRoom createRoom(@RequestBody String roomName) {
+    public ResponseEntity<ChatRoom> createRoom(@RequestBody String roomName) {
         ChatRoom chatRoom = chatRoomService.createRoom(roomName);
-        return chatRoom;
+        return ResponseEntity.ok(chatRoom);
     }
+
+    @GetMapping("/getRoomList")
+    public ResponseEntity<List<ChatRoom>> getRoomList() {
+        return ResponseEntity.ok(chatRoomService.getRoomList());
+    }
+    
+    @GetMapping("/getChatRoomRecord")
+    public ResponseEntity<List<ChatMessage>> getChatRoomRecord(@RequestParam String roomId) {
+        return ResponseEntity.ok(chatRoomService.getChatRoomRecord(roomId));
+    }
+    
+
 }

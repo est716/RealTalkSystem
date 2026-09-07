@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -25,14 +26,20 @@ public class ChatRoomService {
             lastUpdatedMap.put(roomId, currentTime);
             Query query = new Query(Criteria.where("id").is(roomId));
             Update update = new Update().set("lastActiveAt", LocalDateTime.now());
-            mongoTemplate.updateFirst(query, update, ChatRoom.class);
+            mongoTemplate.updateFirst(query, update, ChatRoom.class, "chat_rooms");
         }
     }
 
+    public List<ChatRoom> getRoomList() {
+        return mongoTemplate.findAll(ChatRoom.class, "chat_rooms");
+    }
+
     public ChatRoom createRoom(String roomName) {
-        ChatRoom chatRoom = new ChatRoom();
-        chatRoom.setName(roomName);
-        chatRoom.setLastActiveAt(LocalDateTime.now());
+        ChatRoom chatRoom = new ChatRoom(java.util.UUID.randomUUID().toString(), roomName, LocalDateTime.now());
         return mongoTemplate.save(chatRoom);
+    }
+
+    public List<ChatMessage> getChatRoomRecord(String roomId) {
+        return null;
     }
 }
