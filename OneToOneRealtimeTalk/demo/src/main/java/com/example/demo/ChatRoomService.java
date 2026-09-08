@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -40,6 +41,21 @@ public class ChatRoomService {
     }
 
     public List<ChatMessage> getChatRoomRecord(String roomId) {
-        return null;
+        // 確保按照 timestamp 降序排列，並且在 timestamp 相同的情況下，按照 id 降序排列
+        Sort sort = Sort.by(Sort.Order.desc("timestamp"), Sort.Order.desc("id"));
+        // 查詢指定房間的聊天記錄，限制返回最新的 50 條消息
+        Query query = new Query(Criteria.where("roomId").is(roomId));
+        query.with(sort);
+        query.limit(50);
+        return mongoTemplate.find(query, ChatMessage.class, "chat_messages_" + roomId);
+    }
+
+    public void deleteRoom(String roomId) {
+        // 刪除房間
+        Query roomQuery = new Query(Criteria.where("id").is(roomId));
+        mongoTemplate.remove(roomQuery, ChatRoom.class, "chat_rooms");
+
+        // 刪除該房間的聊天記錄
+        mongoTemplate.dropCollection("chat_messages_" + roomId);  
     }
 }

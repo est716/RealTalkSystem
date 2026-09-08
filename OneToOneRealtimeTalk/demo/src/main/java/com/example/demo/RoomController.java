@@ -12,7 +12,8 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PathVariable;
+
 
 
 
@@ -35,10 +36,9 @@ public class RoomController {
         return ResponseEntity.ok(chatRoomService.getRoomList());
     }
     
-    @GetMapping("/getChatRoomRecord")
-    public ResponseEntity<List<ChatMessage>> getChatRoomRecord(@RequestParam String roomId) {
+    @GetMapping("/getChatRoomRecord/{roomId}")
+    public ResponseEntity<List<ChatMessage>> getChatRoomRecord(@PathVariable String roomId) {
         return ResponseEntity.ok(chatRoomService.getChatRoomRecord(roomId));
     }
     
-
 }
