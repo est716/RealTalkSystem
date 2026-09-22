@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @RestController
 @AllArgsConstructor
 @NoArgsConstructor
+@RestMapping("/api/rooms") // RestMapping 走http連線，與websocket區隔
 public class RoomController {
     
     private ChatRoomService chatRoomService;

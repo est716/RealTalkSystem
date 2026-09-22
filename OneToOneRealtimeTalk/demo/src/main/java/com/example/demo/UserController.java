@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
+@RestMapping("/api/user") // RestMapping 走http連線，與websocket區隔
 public class UserController {
     
     @PostMapping("/createUser")

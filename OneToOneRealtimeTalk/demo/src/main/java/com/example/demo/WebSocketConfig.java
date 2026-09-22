@@ -9,7 +9,7 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 
 
 @Configuration
-@EnableWebSocketMessageBroker
+@EnableWebSocketMessageBroker // 僅使用websocket連線會到這裡
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override

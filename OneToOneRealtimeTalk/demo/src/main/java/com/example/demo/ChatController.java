@@ -16,7 +16,11 @@ public class ChatController {
     private final ChatRoomService chatRoomService;
     private final SimpMessagingTemplate messagingTemplate;
 
-    ChatController(MongoTemplate mongoTemplate, ChatRoomService chatRoomService, SimpMessagingTemplate messagingTemplate) {
+    ChatController(
+        MongoTemplate mongoTemplate,
+        ChatRoomService chatRoomService,
+        SimpMessagingTemplate messagingTemplate
+    ) {
         this.mongoTemplate = mongoTemplate;
         this.chatRoomService = chatRoomService;
         this.messagingTemplate = messagingTemplate;
