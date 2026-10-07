@@ -4,10 +4,11 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @RestController
-@RestMapping("/api/user") // RestMapping 走http連線，與websocket區隔
+@RequestMapping("/api/user") // RequestMapping 走http連線，與websocket區隔
 public class UserController {
     
     @PostMapping("/createUser")

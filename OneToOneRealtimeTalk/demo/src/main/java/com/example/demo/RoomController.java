@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @RestController
 @AllArgsConstructor
 @NoArgsConstructor
-@RestMapping("/api/rooms") // RestMapping 走http連線，與websocket區隔
+@RequestMapping("/api/rooms") // RequestMapping 走http連線，與websocket區隔
 public class RoomController {
     
     private ChatRoomService chatRoomService;
